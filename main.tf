@@ -97,8 +97,8 @@ locals {
   override_policies = [replace(replace(replace(var.additional_bucket_policy,
     "$${origin_path}", local.origin_path),
     "$${bucket_name}", local.bucket),
-  "$${cloudfront_origin_access_identity_iam_arn}", local.cf_access.arn)
-}]
+  "$${cloudfront_origin_access_identity_iam_arn}", local.cf_access.arn)]
+}
 
 data "aws_partition" "current" {
   count = local.enabled ? 1 : 0
